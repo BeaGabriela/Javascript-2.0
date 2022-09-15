@@ -34,7 +34,7 @@ show tables;
 
 
 --LOAD DATA INFILE 'C:/Users/Desenvolvimento.DESKTOP-CJ165MI/Desktop/JavaScript/Exercicios - SENAI/Prova_Javascript/back/clientes.csv'
-LOAD DATA INFILE 'C:/Users/Beatriz/Desktop/JavaScript/Exercicios - SENAI/Prova_Javascript/back/clientes.csv'
+-- LOAD DATA INFILE 'C:/Users/Beatriz/Desktop/JavaScript/Exercicios - SENAI/Prova_Javascript/back/clientes.csv'
 INTO TABLE usuarios
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -47,7 +47,7 @@ select * from usuarios;
 
 
 -- LOAD DATA INFILE 'C:/Users/Desenvolvimento.DESKTOP-CJ165MI/Desktop/JavaScript/Exercicios - SENAI/Prova_Javascript/back/filmes.csv'
-LOAD DATA INFILE 'C:/Users/Beatriz/Desktop/JavaScript/Exercicios - SENAI/Prova_Javascript/back/filmes.csv'
+-- LOAD DATA INFILE 'C:/Users/Beatriz/Desktop/JavaScript/Exercicios - SENAI/Prova_Javascript/back/filmes.csv'
 INTO TABLE filmes
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'
@@ -58,7 +58,7 @@ select * from filmes;
 
 
 -- LOAD DATA INFILE 'C:/Users/Desenvolvimento.DESKTOP-CJ165MI/Desktop/JavaScript/Exercicios - SENAI/Prova_Javascript/back/locacoes.csv'
-LOAD DATA INFILE 'C:/Users/Beatriz/Desktop/JavaScript/Exercicios - SENAI/Prova_Javascript/back/locacoes.csv'
+-- LOAD DATA INFILE 'C:/Users/Beatriz/Desktop/JavaScript/Exercicios - SENAI/Prova_Javascript/back/locacoes.csv'
 INTO TABLE aluga
 FIELDS TERMINATED BY ';'
 ENCLOSED BY '"'

@@ -21,7 +21,7 @@ fetch("http://localhost:3000/produtos")
         colunas[0].innerHTML = produto.cod;
         colunas[1].innerHTML = produto.nome;
         colunas[2].innerHTML = produto.qntd;
-        colunas[3].innerHTML =  produto.preco.toLocaleString('pt-BR', {style: 'currency', currency:'BRL'});
+        colunas[3].innerHTML = "R$ " + produto.preco;
 
         linha.querySelector("#exclui").addEventListener("click", () => {
             modalExcluir.classList.remove("model");
@@ -133,8 +133,4 @@ function cadastrarProduto() {
             alert("Falha ao cadastrar produto");
         }
      })
-}
-
-function Funcionarios(){
-    window.location.href = ".././gerenciaFuncionarios/index.html"
 }

@@ -6,8 +6,9 @@ const conDB = mysql.createConnection({
     "database": "lojinha"
 });
 
-function listarfuncionarios(req, res) {
+function listarFuncionarios(req, res) {
     let query = "SELECT * FROM funcionarios";
+
     conDB.query(query, (err, result) => {
         if(err == null) {
             res.json(result).status(200).end();
@@ -17,8 +18,9 @@ function listarfuncionarios(req, res) {
     })
 };
 
-function listarFuncionario(req, res){
+function listaFuncionario(req, res) {
     let query = `SELECT * FROM funcionarios WHERE matricula = '${req.params.matricula}'`;
+    
     conDB.query(query, (err, result) => {
         if(err == null) {
             res.status(200).json(result).end();
@@ -26,10 +28,11 @@ function listarFuncionario(req, res){
             res.status(400).json(err).end();
         }
     })
-}
+};
 
-function cadastrarFunc(req, res) {
-    let query = `INSERT INTO funcionarios VALUES (DEFAULT, '${req.body.matricula}', '${req.body.nome}', '${req.body.cargo}',  ${req.body.salario},  '${req.body.cpf}')`;
+function cadastrarFuncionario(req, res) {
+    let query = `INSERT INTO funcionarios VALUES (DEFAULT, '${req.body.matricula}', '${req.body.nome}', '${req.body.cargo}', ${req.body.salario}, '${req.body.cpf}')`;
+
     conDB.query(query, (err, result) => {
         if(err == null) {
             res.status(201).json(req.body).end();
@@ -39,7 +42,7 @@ function cadastrarFunc(req, res) {
     });
 };
 
-function excluirFunc(req, res) {
+function excluirFuncionario(req, res) {
     let query = `DELETE FROM funcionarios WHERE matricula = '${req.body.matricula}'`;
 
     conDB.query(query, (err, result) => {
@@ -51,7 +54,7 @@ function excluirFunc(req, res) {
     });
 };
 
-function editarFunc(req, res){
+function editarFuncionario(req, res){
     let query = `UPDATE funcionarios SET matricula = '${req.body.matricula}', nome = '${req.body.nome}', cargo = '${req.body.cargo}', salario = ${req.body.salario}, cpf = '${req.body.cpf}' WHERE matricula = '${req.body.matricula}'`;
 
     conDB.query(query, (err, result) => {
@@ -63,12 +66,10 @@ function editarFunc(req, res){
     });
 };
 
-
 module.exports = {
-    listarfuncionarios,
-    listarFuncionario,
-    cadastrarFunc,
-    excluirFunc,
-    editarFunc
-    
+    listarFuncionarios,
+    listaFuncionario,
+    cadastrarFuncionario,
+    excluirFuncionario,
+    editarFuncionario
 }

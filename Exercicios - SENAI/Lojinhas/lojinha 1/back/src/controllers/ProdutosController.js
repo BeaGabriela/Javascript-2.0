@@ -8,6 +8,7 @@ const conDB = mysql.createConnection({
 
 function listarProdutos(req, res) {
     let query = "SELECT * FROM produtos";
+
     conDB.query(query, (err, result) => {
         if(err == null) {
             res.json(result).status(200).end();
