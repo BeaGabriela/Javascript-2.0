@@ -1,0 +1,4 @@
+assincrono - 
+sincrono - 
+
+A promisse fica aguardando uma resposta.

@@ -1,0 +1,11 @@
+Criar uma pasta
+cd + 'nome_da_pasta'
+expo init + 'o nome' - Cria um novo projeto.
+cd + 'pasta'
+npm expo i -g -cli //Dependendo da versao o expo.
+npm i -g expo-cli
+expo start 
+
+
+
+
