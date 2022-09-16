@@ -1,20 +1,32 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { View, TouchableOpacity, Textinput, ScrollView, Text } from 'react-native';
 
+//useState --> é como um gatilho, toda vez que ele sofrer uma alteração, ele vai recarregar uma página.
 export default function App() {
+  const [nome, setNome] = useState(""); //nome - get, e o setNome é o set, sendo assim, ele que vai ser responsavel por modificar o nome.
+  const [cargo, setCargo] = useState(""); //Aqui funciona igual ao nome
+  const [lista, setLista] = useState([
+    {
+      "nome": "Fulano",
+      "cargo": "Programador"
+    },
+    {
+      "nome": "Beltrano",
+      "cargo": "Analista"
+    }
+  ]);
+
   return (
     <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
+      <Textinput placeholder="Nome do funcionario" onChangeText={(val) =>{setNome(val) }} /> 
+      
+      <Textinput placeholder="Cargo do funcionario" onChangeText={(val) =>{setCargo(val)}}/>
+      <Button title='Cadastrar Funcionario'></Button>
+      <ScrollView>
+    {
+      lista.map((funcionario, indice))
+    }
+      </ScrollView>
     </View>
   );
-}
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+};

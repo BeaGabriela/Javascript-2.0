@@ -1,3 +1,4 @@
 Expo init "O nome que você deseja dar a pasta" - Cria uma pasta. (ATENÇÃO: Verifique o endereço da criação da pasta, e faça isso pelo Visual Studio Code)
 
 Eval() -- Ele pega uma expressão em String e tenta resolver ela. Exemplo: "5"+"5" ==> Ele vai tentar rsolver.
+onChangeText -- Pega o valor do input, sme a necessidade de digitar o '.value'
