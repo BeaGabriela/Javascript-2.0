@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ptBR">
+
+<head>
+    <meta charset=' UTF-8'>
+    <meta http-equiv="X-UA-Compatible" content="IE-edge">
+    <meta name="viewpoirt" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./index.css">
+    <title>Estacionamento</title>
+</head>
+
+<body onload="vagas()">
+    <header>
+        <h2>Estacionamento 'Pare aqui!' </h2>
+    </header>
+    <h4>Preencha as linhas abaixo para cadastrar a estrada de um veiculo.</h4>
+    <main>
+        <nav>
+            <p>Id:<input type="number" disabled value="id"></p>
+            <p>Placa:<input type="text" placeholder="Placa"></p>
+            <p>Hora_entrada:<input type="text" placeholder="Hora_entrada"></p>
+            <p>Tipo:<select>
+                    <option value="Moto">Moto</option>
+                    <option value="Carro">Carro</option>
+                </select></p>
+            <p>Datas entrada<input type="text" placeholder="Data_entrada"></p>
+            <p>Datas saidas:<input type="text" placeholder="Data_saida"></p>
+            <p>Hora_saida:<input type="text" placeholder="Hora_saida"></p>
+            <p>Valor total:<input type='text' placeholder="Total" id='total'></p>
+        </nav>
+        <div ID="vagas">Vaga:<input id="valores" disabled>
+            <div id="fileira1">
+                <a id="f10" href="">2</a>
+                <a id="f11"href="">1</a>
+                <a id="f12"href="">3</a>
+                <a id="f13"href="">4</a>
+            </div>
+            <div id="fileira2">
+                <a id="f21" href="">5</a>
+                <a id="f22" href="">6</a>
+                <a id="f23" href="">7</a>
+                <a id="f24" href="">8</a>
+            </div>
+            <div id="motos">
+                <a id='m1' href="">a</a>
+                <a id='m2' href="">b</a>
+                <a id='m3' href="">c</a>
+                <a id='m4'  href="">d</a>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+<script src="./index.js"></script>
+</html>
