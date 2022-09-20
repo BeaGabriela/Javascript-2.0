@@ -3,7 +3,7 @@ create database Emprestimo charset=UTF8 collate utf8_general_ci;
 use Emprestimo;
 
 create table  clientes (
-    cpf varchar(12) not null primary key,
+    cpf varchar(15) not null primary key,
     pri_nome varchar(20)not null, 
     sobrenome varchar(20) not null,
     cep varchar(9) not null,
@@ -14,32 +14,32 @@ create table telefones(
     cpf varchar(12) not null,
     tipo varchar(10) not null,
     numero varchar(20) not null,
-
     foreign key (cpf) references clientes(cpf)
 );
 
 create table emprestimos(
-    id_emprestimos integer auto_increment not null primary key,
-     cpf varchar(12) not null,
+    id_emprestimo integer auto_increment not null primary key,
+    cpf varchar(15) not null,
     data date not null,
     capital float(5.2) not null,
     n_parcelas integer not null,
     taxa_juros integer not null,
     impostos integer not null,
-    montante float(5.2) not null,
-
+    montante float(5.2),
     foreign key (cpf) references clientes(cpf)
 );
 
+
+
 create table parcelas(
-    id integer auto_increment not null primary key,
-    id_emprestimos integer not null,
+    id integer not null primary key auto_increment,
+    id_emprestimo integer not null,
     vencimento date not null,
-    pagamento float(5.2) not null,
+    data_pagamento varchar(10),
     valor float(5.2) not null,
-    val_recebido float(5.2) not null,
-    diferenca float(5.2) not null,
-    foreign key (id_emprestimos) references emprestimos(id_emprestimos)
+    val_recebido float(5.2),
+    diferenca float(5.2),
+    foreign key (id_emprestimo) references emprestimos(id_emprestimo)
 );
 
 describe clientes;
@@ -76,3 +76,23 @@ IGNORE 1 ROWS;
 
 select * from emprestimos;
 
+-- drop trigger if exists parcelinhas;
+-- create trigger parcelinhas  after insert on emprestimos
+-- for each row
+-- insert into parcelas values (default, new.id_emprestimo, '30/08/2022', '10/09/2022', 200.00, null, null);
+
+-- insert into  emprestimos value (default,"456.761.940-49",curdate(),1000,10,1,200,null);
+-- select * from parcelas;
+
+ 
+
+drop trigger if exists parcelinhas;
+create trigger parcelinhas  after update on emprestimos
+for each row
+insert into parcelas values (default, new.id_emprestimo, '30/08/2022', '10/09/2022', 200.00, null, null);
+
+
+update emprestimos set montante=(select sum(capital*(pow((1+taxa_juros),n_parcelas)+impostos)) from emprestimos where id_emprestimo = 2) where id_emprestimo = 2;
+select * from parcelas;
+
+    

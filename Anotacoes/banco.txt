@@ -7,3 +7,6 @@ Sub_consultas -> Pode se consultar dados dentro de uma tabela, ao invés de digi
 
 sql transacional --> Permitem a execução de uma sequência de operações como um bloco indivisível de forma a garantir a integridade dos dados em um ambiente com acesso concorrente.
 Quando se mexe com mais de duas tabelas, é por que usa o mysql transação.
+
+Visual studio code:
+ctrl+shift_p -- Alterar as letras.
