@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
+import ButtonCadastrar from '../../components/buttonCadastrar';
 
 export default function Home({ navigation }) {
     const img = require('../../../assets/imag.png')
@@ -39,7 +40,7 @@ export default function Home({ navigation }) {
                 restaurantes.map((res) => {
                     return (
                         <View>
-                        <TouchableOpacity onPress={() => { navigation.navigate("Descricao", { "descricao": res.descricao }) }}>
+                        <TouchableOpacity key={index} onPress={() => { navigation.navigate("Descricao", { "descricao": res.descricao }) }}>
                             <Text>{res.nome}</Text>
                             <Text>{res.nota}<Image source={img} style={{width: 12, height: 12}}/></Text>
                         </TouchableOpacity>
@@ -48,6 +49,7 @@ export default function Home({ navigation }) {
                     )
                 })
             }
+            <ButtonCadastrar value='Cadastro' onPress={funcao()}/>
         </View>
     )
 }
