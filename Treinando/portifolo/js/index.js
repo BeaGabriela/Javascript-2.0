@@ -250,6 +250,7 @@ function limpar() {
   document.querySelector('#cursos').style.color = 'black'
   document.querySelector('#redes').style.color = 'black'
   document.querySelector('#estudos').style.color = 'black'
+  document.querySelector('#me').style.color = 'black'
   var div = document.createElement('div')
 
   var img = document.createElement('img')
@@ -299,5 +300,62 @@ div.style= 'margin:40px 43vw; border: 1x solid white; width: 15vw;'
 
   document.querySelector('.mural').appendChild(div)
 
+}
+
+function sobremim(){
+  document.querySelector('#me').style.color = 'red'
+  var m = document.querySelector('.main')
+  m.innerHTML = ''
+
+  var div = document.createElement('div')
+   var mus = document.createElement('p')
+   var liv = document.createElement('p')
+   var hob = document.createElement('p')
+   var tex = document.createElement('p')
+  
+
+   mus.innerHTML = 'Músicas do momento: '
+   mus.addEventListener('click', ()=>{
+    document.window.location = '.../'
+   })
+
+  //Colocar o site de musica que eu fiz.
+
+  liv.innerHTML += 'Livros do momento:'
+  liv.addEventListener('click', ()=>{
+    document.window.location = '..'
+  })
+  //Criar um, site para livros favoritos
+
+  hob.innerHTML = 'Hobbys'
+  hob.addEventListener('click', ()=>{
+    var h = document.createElement('p')
+    h.innerHTML = 'Tocar violão<br>Escrever histórias ficticias<br>Cozinhar<br>Ler livros<br>'
+    hob.appendChild(h)
+ 
+  hob.addEventListener('mouseout', ()=>{
+    h.innerHTML = ''
+    hob.appendChild(h)
+  })
+})
+
+
+  tex.innerHTML += 'Um textinho sobre mim.'
+  tex.addEventListener('click', ()=>{
+    var texto = document.createEelement('p')
+    p.innerHTML = 'Com esse texto, eu vim dizer um pouquinho sobre mim. Começando com algumas qualidades minhas'+
+    'dentre elas estão ao pontualidade. Sou uma pesspa que sempre tentar ser pontual. '
+  })
+
+ 
+
+  div.appendChild(mus)
+  div.appendChild(liv)
+  div.appendChild(hob)
+  div.appendChild(tex)
+
+  document.querySelector('.mural').appendChild(div)
+  div.style = 'display:flex'
+  div.style.justifyContent='space-around'
 
 }
