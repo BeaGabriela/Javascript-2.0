@@ -29,20 +29,23 @@ input{
     height: 3vh;
 }
 
-main{
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    margin: 0 20vw 0 0;
-}
 
-nav {
-    display: flex;
-    justify-content: center;
-    background-color: red ;
+
+.model{
+    display: none;
+}
+table{
+    align-items: center;
+}
+tr, td{
+    border: 1px solid black;
 }
 
  a{
     padding: 10px;
     background-color: antiquewhite;
+}
+
+img{
+    margin: 30vh 45vw;
 }

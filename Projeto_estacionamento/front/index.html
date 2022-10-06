@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,8 @@
     <link rel="stylesheet" href="./index.css">
     <title>Estacionamento</title>
 </head>
-<body onload="carregar()">
+
+<body>
     <header>
         <div class="banner">
             <p>Estacionamento 'Pare'</p>
@@ -18,18 +20,42 @@
             <input type="button" value="Cadastrar">
         </div>
     </header>
-    <div id="tela model"></div>
     <main>
-        <p>Vagas</p>
-        <nav class="geral model">
-            <div class="linha" >
-                <div class="vaga">
-                    <p id="vv"></p>
-                </div>
-            </div>
-        </nav>
+        <div class="limpar">
+            <img src='../R.png' height="200px" />
+        </div>
+
+        <div>
+            <table>
+                <thead>
+                    <th>ID</th>
+                    <th>Vaga</th>
+                    <th>Placa</th>
+                    <th>Hora_entrada</th>
+                    <th>Datas_entrada</th>
+                    <th>Datas_saida</th>
+                    <th>Hora_saida</th>
+                    <th>Valor_total</th>
+                </thead>
+                <tbody>
+                    <tr class='geral model'>
+                        <td id="id"></td>
+                        <td id="vaga"></td>
+                        <td id="placa"></td>
+                        <td id="hora_entrada"></td>
+                        <td id="datas_entrada"></td>
+                        <td id="datas_saida"></td>
+                        <td id="hora_saida"></td>
+                        <td id="valor_total"></td>
+                    </tr>
+                </tbody>
+            </table>
+
+        </div>
     </main>
-    
+
+
 </body>
 <script src="./index.js"></script>
+
 </html>
