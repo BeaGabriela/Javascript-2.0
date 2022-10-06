@@ -1,12 +1,17 @@
-function vagas(){
-    var v = document.querySelector('#fileira1');
-    v.cloneNode(true);
 
-    let c = v.querySelectorAll('a')
+const geral = document.querySelector('.geral')
 
-    c[1].addEventListener('keyup', () => {
-        document.querySelector('valores').value = 'v1'
+function carregar() {
+    fetch('')
+    .then(res => {return res.json()})
+    .then(cadastros => {
+        cadastros.forEach(cad => {
+            geral.cloneNode(true)
+            geral.classList.remove('model')
+
+            var i1 = document.createElement('input')
+
     })
+})
 }
-
 

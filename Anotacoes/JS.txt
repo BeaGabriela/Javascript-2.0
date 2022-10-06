@@ -225,5 +225,5 @@ Operadores:
 					
 	.split(" ") -- Transforma em um vetor de acordo com o que esta dentro dos parentes.
 			
-			jaison - Uma estrutura de dados . -- {}			para acessar algo dentro dela, deve usar como o nome da variavel que contem tudo '.' a variavel. Exemplo: Aluno.notas.forEach (Acessa o vetor notas)
+			json - Uma estrutura de dados . -- {}			para acessar algo dentro dela, deve usar como o nome da variavel que contem tudo '.' a variavel. Exemplo: Aluno.notas.forEach (Acessa o vetor notas)
 			
