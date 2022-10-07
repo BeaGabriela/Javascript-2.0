@@ -49,6 +49,17 @@ app.get('/projeto_estacionamento/View_vizua', (req,res) => {
     });
 });
 
+
+app.get('/projeto_estacionamento/View_vizua', (req,res) => {
+    let string = `insert into  View_vizua values (default, '${req.vaga}', '${req.placa}, curtime(), curdate(), '${req.datas_saida}', '${req.hora_saida}','${rq.valor_total}' )`;
+    con.query(string,(err, result) => {
+        if(err==null){
+            res.json(result);
+        }
+    });
+});
+
+
 app.listen(5000, () => {
     console.log('Respondendo na porta 50000')
 })
