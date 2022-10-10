@@ -33,6 +33,17 @@ app.post('/projeto_estacionamento/entrada', (req,res) => {
     });
 });
 
+app.post('/projeto_estacionamento/saida', (req,res) => {
+    let string = `INSERT INTO saida VALUES (DEFAULT, curtime(), '${req.body.datas_saida}' )`;
+    con.query(string,(err, result) => {
+        if(err==null){
+            res.status(201).json(req.body).end();
+        }else{
+            res.status(400).json(err).end();
+        }
+    });
+});
+
 app.get('/projeto_estacionamento/saida', (req,res) => {
     let string = 'select * from saida order by id';
     con.query(string,(err, result) => {
@@ -42,14 +53,6 @@ app.get('/projeto_estacionamento/saida', (req,res) => {
     });
 });
 
-app.get('/projeto_estacionamento/estacionar', (req,res) => {
-    let string = 'select * from estacionar order by id';
-    con.query(string,(err, result) => {
-        if(err==null){
-            res.json(result);
-        }
-    });
-});
 
 app.get('/projeto_estacionamento/View_vizua', (req,res) => {
     let string = 'select * from View_vizua';
@@ -61,14 +64,6 @@ app.get('/projeto_estacionamento/View_vizua', (req,res) => {
 });
 
 
-app.get('/projeto_estacionamento/View_vizua', (req,res) => {
-    let string = `insert into  View_vizua values (default, '${req.vaga}', '${req.placa}, curtime(), curdate(), '${req.datas_saida}', '${req.hora_saida}','${rq.valor_total}' )`;
-    con.query(string,(err, result) => {
-        if(err==null){
-            res.json(result);
-        }
-    });
-});
 
 
 app.listen(5000, () => {

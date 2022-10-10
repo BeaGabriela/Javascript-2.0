@@ -14,7 +14,7 @@ create table entrada (
 create table saida(
     id integer not null,
     datas_saida date not null,
-    hora_saida datetime not null,
+    hora_saida time not null,
     foreign key (id) references entrada(id)
 );
 
