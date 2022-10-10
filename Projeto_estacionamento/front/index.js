@@ -40,22 +40,50 @@ function listar(){
                 tabela.classList.remove('model')
                 tabela.cloneNode()
 
-                var th1 = document.createElement('td')
-                var th2 = document.createElement('td')
-                var th3 = document.createElement('td')
+                var table = document.createElement('table')
+                var thead = document.createElement('thead')
+                var tr = document.createElement('tr')
+                var th1 = document.createElement('th')
+                var th2 = document.createElement('th')
+                var th3 = document.createElement('th')
 
-                th1.innerHTML = cad.id
-                th2.innerHTML = cad.datas_saida
-                th3.innerHTML = cad.hora_saida
+                th1.innerHTML = 'Id'
+                th2.innerHTML = 'Data Saida'
+                th3.innerHTML = 'Hora Saida'
 
-                geral.appendChild(th1)
-                geral.appendChild(th2)
-                geral.appendChild(th3)
+                tr.appendChild(th1)
+                tr.appendChild(th2)
+                tr.appendChild(th3)
+
+                thead.appendChild(tr)
+
+                var tbody = document.createElement('tbody')
+                var tr1 = document.createElement('tr')
+                var td1 = document.createElement('td')
+                var td2 = document.createElement('td')
+                var td3 = document.createElement('td')
+
+                td1.innerHTML = cad.id
+                td2.innerHTML =  cad.datas_saida
+                td3.innerHTML = cad.hora_saida
+
+                tr1.appendChild(td1)
+                tr1.appendChild(td2)
+                tr1.appendChild(td3)
+
+                tbody.appendChild(tr1)
+
+                table.appendChild(thead)
+                table.appendChild(tbody)
+
+                tabela.appendChild(table)
+
+
 
                
                
                 console.log('to aqui. Mas nao to indo')
-                tb.appendChild(geral)
+                
     })
 })
     })
