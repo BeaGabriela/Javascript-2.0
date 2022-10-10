@@ -13,11 +13,22 @@ const con = mysql.createConnection({
     database: "projeto_estacionamento"
 });
 
-app.get('/projeto_estacionamento/entrada', (req,res) => {
+app.get('/projeto_estacionamento/entrada', (req ,res) => {
     let string = 'select * from entrada order by id';
     con.query(string,(err, result) => {
         if(err==null){
             res.json(result);
+        }
+    });
+});
+
+app.post('/projeto_estacionamento/entrada', (req,res) => {
+    let string = `INSERT INTO entrada VALUES (DEFAULT, '${req.body.vaga}', '${req.body.placa}', curtime(), curdate(),'${req.body.tipo}' )`;
+    con.query(string,(err, result) => {
+        if(err==null){
+            res.status(201).json(req.body).end();
+        }else{
+            res.status(400).json(err).end();
         }
     });
 });

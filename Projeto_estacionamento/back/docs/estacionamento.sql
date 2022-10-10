@@ -6,9 +6,9 @@ create table entrada (
     id integer not null auto_increment  primary key,
     vaga varchar(5) not null,
     placa varchar(10) not null,
-    hora_entrada datetime not null,
-    tipo varchar(6) not null,
-    datas_entrada date not null
+    hora_entrada time not null,
+    datas_entrada date not null,
+    tipo varchar(6) not null
 );
 
 create table saida(
@@ -27,10 +27,10 @@ create table estacionar(
 
 show tables;
 
-insert into entrada values(default, 'A0', 'abc123', curtime(), 'C', curdate());
-insert into entrada values(default, 'A2', 'qwe234', curtime(), 'C', curdate());
-insert into entrada values(default, 'M2', 'asd567', curtime(), 'M', curdate());
-insert into entrada values(default, 'M0', 'MLO097', curtime(), 'M', curdate());
+insert into entrada values(default, 'A0', 'abc123', curtime(), curdate(), 'C');
+insert into entrada values(default, 'A2', 'qwe234', curtime(), curdate(), 'C');
+insert into entrada values(default, 'M2', 'asd567', curtime(), curdate(), 'M');
+insert into entrada values(default, 'M0', 'MLO097', curtime(), curdate(), 'M');
 
 insert into saida values(1, curdate(),curtime() );
 insert into saida values(2, '2022-09-15','17:10' );

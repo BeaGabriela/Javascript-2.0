@@ -15,8 +15,8 @@
             <p>Estacionamento 'Pare'</p>
         </div>
         <div class="botoes">
-            <input type="button" value="Listar" onclick="listar()">
-            <input type="button" value="Cadastrar" onclick="cadastrar()">
+            <input type="button" value="Listar" onclick="listar()" ondblclick="limpar()">
+            <input type="button" value="Cadastrar" onclick="cadastrar()" ondblclick="limpar()">
             <input type="button" value="Alterar">
             </div>
     </header>
@@ -24,17 +24,20 @@
         <div class="limpar">
             <img src='../R.png' height="200px" />
         </div>
-        <div class="mamae">
+        <div class="mamae model">
+            <div class="botos model">
+          <button id='ListarEntradas'>Listar Entradas</button>
+          <button id='ListarSaidas' >Listar Saidas</button>
+          <button id='ListarCarros'>Listar Carros</button>
+          </div>
             <table class="tabela model">
                 <thead>
                     <th>ID</th>
                     <th>Vaga</th>
                     <th>Placa</th>
-                    <th>Hora_entrada</th>
-                    <th>Datas_entrada</th>
-                    <th>Datas_saida</th>
-                    <th>Hora_saida</th>
-                    <th>Valor_total</th>
+                    <th>Hora Entrada</th>
+                    <th>Data Entrada</th>
+                    <th>Tipo</th>
                 </thead>
                 <tbody>
                     <tr class='geral model'>
@@ -43,9 +46,7 @@
                         <td id="placa"></td>
                         <td id="hora_entrada"></td>
                         <td id="datas_entrada"></td>
-                        <td id="datas_saida"></td>
-                        <td id="hora_saida"></td>
-                        <td id="valor_total"></td>
+                        <td id="tipo"></td>
                     </tr>
                 </tbody>
             </table>
