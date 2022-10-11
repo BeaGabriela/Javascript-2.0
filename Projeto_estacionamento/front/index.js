@@ -230,6 +230,10 @@ function cadastrar() {
     cadastrarSaida.addEventListener('click', () => {
         var nav = document.createElement('nav')
     
+        var id = document.createElement('input')
+        id.setAttribute('placeholder', 'id')
+        id.disabled = true
+
         var InputdATAS = document.createElement('input')
         InputdATAS.setAttribute('placeholder', 'data Saida')
     
@@ -237,13 +241,15 @@ function cadastrar() {
         btn.setAttribute('type', 'button')
         btn.setAttribute('value', 'Cadastrar')
     
-       
+        nav.appendChild(id)
         nav.appendChild(InputdATAS)
         nav.appendChild(btn)
+       
 
         document.querySelector('.mamae').appendChild(nav)
     
         btn.addEventListener('click', () => {
+
         let carro = {
             'datas_saida': InputdATAS.value
         };
