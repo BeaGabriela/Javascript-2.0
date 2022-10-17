@@ -232,7 +232,6 @@ function cadastrar() {
     
         var id = document.createElement('input')
         id.setAttribute('placeholder', 'id')
-        id.disabled = true
 
         var InputdATAS = document.createElement('input')
         InputdATAS.setAttribute('placeholder', 'data Saida')
@@ -251,6 +250,7 @@ function cadastrar() {
         btn.addEventListener('click', () => {
 
         let carro = {
+            'id' : id.value,
             'datas_saida': InputdATAS.value
         };
 
@@ -263,7 +263,7 @@ function cadastrar() {
         })
             .then(res => { return res.json() })
             .then(resp => {
-                if (resp.datas_saida !== undefined) {
+                if (resp.id !== undefined) {
                     alert("Saida de carro Cadastrado Com Sucesso !");
                     window.location.reload();
                 } else {
