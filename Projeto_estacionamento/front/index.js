@@ -6,6 +6,9 @@ b.classList.add('model')
 var bC = document.querySelector('.botoesCadastro')
 bC.classList.add('model')
 
+var alte = document.querySelector('.alterarBotoes ')
+alte.classList.add('model')
+
 function listar() {
     l.classList.remove('model')
     b.classList.remove('model')
@@ -232,7 +235,10 @@ function cadastrar() {
     
         var id = document.createElement('input')
         id.setAttribute('placeholder', 'id')
+<<<<<<< HEAD
        
+=======
+>>>>>>> 3e2b3cfcf0b81f3c4770ec198011ed5f612f8af0
 
         var InputdATAS = document.createElement('input')
         InputdATAS.setAttribute('placeholder', 'data Saida')
@@ -251,6 +257,7 @@ function cadastrar() {
         btn.addEventListener('click', () => {
 
         let carro = {
+            'id' : id.value,
             'datas_saida': InputdATAS.value
         };
 
@@ -263,7 +270,7 @@ function cadastrar() {
         })
             .then(res => { return res.json() })
             .then(resp => {
-                if (resp.datas_saida !== undefined) {
+                if (resp.id !== undefined) {
                     alert("Saida de carro Cadastrado Com Sucesso !");
                     window.location.reload();
                 } else {
@@ -275,6 +282,12 @@ function cadastrar() {
     })
 }
 
+function alterar(){
+    l.classList.remove('model')
+    b.classList.remove('model')
+    document.querySelector('.limpar').innerHTML = ''
+    var alterarEntradas = document.querySelector('#alterarEntrada')
+}
 
 
 
