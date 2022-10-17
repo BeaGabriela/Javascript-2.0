@@ -232,7 +232,7 @@ function cadastrar() {
     
         var id = document.createElement('input')
         id.setAttribute('placeholder', 'id')
-        id.disabled = true
+       
 
         var InputdATAS = document.createElement('input')
         InputdATAS.setAttribute('placeholder', 'data Saida')

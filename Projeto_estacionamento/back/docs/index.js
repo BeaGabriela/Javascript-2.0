@@ -33,8 +33,8 @@ app.post('/projeto_estacionamento/entrada', (req,res) => {
     });
 });
 
-app.post('/projeto_estacionamento/saida', (req,res) => {
-    let string = `INSERT INTO saida VALUES (DEFAULT, curtime(), '${req.body.datas_saida}' )`;
+app.put('/projeto_estacionamento/saida', (req,res) => {
+    let string = `UPDATE saida SET datas_saida = ('${req.body.datas_saida}') WHERE id = '${req.body.id}'`;
     con.query(string,(err, result) => {
         if(err==null){
             res.status(201).json(req.body).end();
