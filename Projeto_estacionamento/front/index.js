@@ -6,6 +6,9 @@ b.classList.add('model')
 var bC = document.querySelector('.botoesCadastro')
 bC.classList.add('model')
 
+var alte = document.querySelector('.alterarBotoes ')
+alte.classList.add('model')
+
 function listar() {
     l.classList.remove('model')
     b.classList.remove('model')
@@ -275,6 +278,12 @@ function cadastrar() {
     })
 }
 
+function alterar(){
+    l.classList.remove('model')
+    b.classList.remove('model')
+    document.querySelector('.limpar').innerHTML = ''
+    var alterarEntradas = document.querySelector('#alterarEntrada')
+}
 
 
 
