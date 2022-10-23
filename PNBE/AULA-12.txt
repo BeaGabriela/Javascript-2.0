@@ -1,4 +1,0 @@
-GET - Read
-POSt - Create
-Put - Update
-DELETE - Delete
